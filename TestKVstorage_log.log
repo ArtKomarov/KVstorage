@@ -1,0 +1,57 @@
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua C> Tarantool 2.7.2-0-g4d8c06890
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua C> log level 5
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua I> wal/engine cleanup is paused
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua I> mapping 268435456 bytes for memtx tuple arena...
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua I> Actual slab_alloc_factor calculated on the basis of desired slab_alloc_factor = 1.044274
+2021-06-15 03:42:05.978 [111971] main/103/storage.lua I> mapping 134217728 bytes for vinyl tuple arena...
+2021-06-15 03:42:05.979 [111971] main/103/storage.lua I> instance uuid 7ce93911-ecf0-40cb-b49a-0aa94a4a6684
+2021-06-15 03:42:05.979 [111971] main/103/storage.lua I> initializing an empty data directory
+2021-06-15 03:42:05.986 [111971] main/103/storage.lua I> assigned id 1 to replica 7ce93911-ecf0-40cb-b49a-0aa94a4a6684
+2021-06-15 03:42:05.986 [111971] main/103/storage.lua I> cluster uuid 546c9c9e-21ed-4d3f-8948-4b0b56f60605
+2021-06-15 03:42:05.986 [111971] main/103/storage.lua xlog.c:462 E> XlogError: ./00000000000000000010.xlog: invalid instance UUID
+2021-06-15 03:42:05.986 [111971] main/103/storage.lua xlog.c:462 E> XlogError: ./00000000000000000014.xlog: invalid instance UUID
+2021-06-15 03:42:05.986 [111971] main/103/storage.lua xlog.c:462 E> XlogError: ./00000000000000000017.xlog: invalid instance UUID
+2021-06-15 03:42:05.986 [111971] snapshot/101/main I> saving snapshot `./00000000000000000000.snap.inprogress'
+2021-06-15 03:42:06.024 [111971] snapshot/101/main I> done
+2021-06-15 03:42:06.025 [111971] main/103/storage.lua I> ready to accept requests
+2021-06-15 03:42:06.025 [111971] main/104/gc I> wal/engine cleanup is resumed
+2021-06-15 03:42:06.026 [111971] main/103/storage.lua I> set 'log_level' configuration option to 5
+2021-06-15 03:42:06.026 [111971] main/105/checkpoint_daemon I> scheduled next checkpoint for Tue Jun 15 05:41:12 2021
+2021-06-15 03:42:06.031 [111971] main/103/storage.lua I> set 'log_format' configuration option to "plain"
+2021-06-15 03:42:06.047 [111971] main/118/http/127.0.0.1:8080 I> started
+2021-06-15 03:42:06.048 [111971] main C> entering the event loop
+2021-06-15 03:42:08.113 [111971] main/119/http/127.0.0.1:40420 I> POST /kv/
+2021-06-15 03:42:08.113 [111971] main/119/http/127.0.0.1:40420 I> POST(three, value_three) - RESPONSE: 201
+2021-06-15 03:42:08.115 [111971] main/120/http/127.0.0.1:40424 I> POST /kv/
+2021-06-15 03:42:08.115 [111971] main/120/http/127.0.0.1:40424 I> POST(nil, kay, not the key) - RESPONSE: 400
+2021-06-15 03:42:08.116 [111971] main/121/http/127.0.0.1:40428 I> POST /kv/
+2021-06-15 03:42:08.116 [111971] main/121/http/127.0.0.1:40428 I> POST(3, number, not str) - RESPONSE: 400
+2021-06-15 03:42:08.118 [111971] main/122/http/127.0.0.1:40432 I> POST /kv/
+2021-06-15 03:42:08.118 [111971] main/122/http/127.0.0.1:40432 I> POST(four, value_four) - RESPONSE: 201
+2021-06-15 03:42:08.120 [111971] main/123/http/127.0.0.1:40436 I> POST /kv/
+2021-06-15 03:42:08.120 [111971] main/123/http/127.0.0.1:40436 I> POST(four, other_value_four) - RESPONSE: 409
+2021-06-15 03:42:08.121 [111971] main/124/http/127.0.0.1:40440 I> PUT /kv/one/
+2021-06-15 03:42:08.121 [111971] main/124/http/127.0.0.1:40440 I> PUT(one, other_value_one) - RESPONSE: 200
+2021-06-15 03:42:08.123 [111971] main/125/http/127.0.0.1:40444 I> PUT /kv/one/
+2021-06-15 03:42:08.123 [111971] main/125/http/127.0.0.1:40444 I> PUT(one, ) - RESPONSE: 400
+2021-06-15 03:42:08.125 [111971] main/126/http/127.0.0.1:40448 I> PUT /kv/incorrect_key/
+2021-06-15 03:42:08.125 [111971] main/126/http/127.0.0.1:40448 I> PUT(incorrect_key, value_for_incorrect_key) - RESPONSE: 404
+2021-06-15 03:42:08.126 [111971] main/127/http/127.0.0.1:40452 I> GET /kv/one/
+2021-06-15 03:42:08.126 [111971] main/127/http/127.0.0.1:40452 I> GET(one, other_value_one) - RESPONSE: 200
+2021-06-15 03:42:08.128 [111971] main/128/http/127.0.0.1:40456 I> GET /kv/incorrect_key/
+2021-06-15 03:42:08.128 [111971] main/128/http/127.0.0.1:40456 I> GET(incorrect_key, ) - RESPONSE: 404
+2021-06-15 03:42:08.130 [111971] main/129/http/127.0.0.1:40460 I> DELETE /kv/one/
+2021-06-15 03:42:08.132 [111971] main/130/http/127.0.0.1:40464 I> DELETE /kv/one/
+2021-06-15 03:42:08.133 [111971] main/130/http/127.0.0.1:40464 I> DELETE(one, ) - RESPONSE: 404
+2021-06-15 03:42:08.134 [111971] main/131/http/127.0.0.1:40468 I> POST /kv/
+2021-06-15 03:42:08.135 [111971] main/131/http/127.0.0.1:40468 I> POST(strong_key, strong_value) - RESPONSE: 201
+2021-06-15 03:42:08.136 [111971] main/132/http/127.0.0.1:40472 I> GET /kv/strong_key/
+2021-06-15 03:42:08.136 [111971] main/132/http/127.0.0.1:40472 I> GET(strong_key, strong_value) - RESPONSE: 200
+2021-06-15 03:42:08.138 [111971] main/133/http/127.0.0.1:40476 I> PUT /kv/strong_key/
+2021-06-15 03:42:08.138 [111971] main/133/http/127.0.0.1:40476 I> PUT(strong_key, other_strong_value) - RESPONSE: 200
+2021-06-15 03:42:08.140 [111971] main/134/http/127.0.0.1:40480 I> GET /kv/strong_key/
+2021-06-15 03:42:08.140 [111971] main/134/http/127.0.0.1:40480 I> GET(strong_key, other_strong_value) - RESPONSE: 200
+2021-06-15 03:42:08.142 [111971] main/135/http/127.0.0.1:40484 I> DELETE /kv/strong_key/
+2021-06-15 03:42:08.144 [111971] main/136/http/127.0.0.1:40488 I> GET /kv/strong_key/
+2021-06-15 03:42:08.144 [111971] main/136/http/127.0.0.1:40488 I> GET(strong_key, ) - RESPONSE: 404
+2021-06-15 03:42:19.571 [111971] wal/101/main xlog.c:837 !> SystemError file './00000000000000000014.xlog' already exists: File exists
