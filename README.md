@@ -3,7 +3,7 @@
 - запустить тестовое приложение  
 - реализовать kv-хранилище доступное по http  
 - выложить на гитхаб  
-- * задеплоить где-нибудь в публичном облаке API: 
+- \* задеплоить где-нибудь в публичном облаке API: 
     - POST /kv body: {key: "test", "value": {SOME ARBITRARY JSON}} 
     - PUT kv/{id} body: {"value": {SOME ARBITRARY JSON}} 
     - GET kv/{id} 
