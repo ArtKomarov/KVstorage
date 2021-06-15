@@ -14,7 +14,7 @@
 
 ### Справка
 Реализованное задание находится в файле [storage.lua](storage.lua)  
-Тесты находятся в файле [tests.lua](tests.lua)  
+Тесты находятся в файле [test.lua](test.lua)  
 #### Скриншот тестов
 ![](screenshots/tests.png)  
 
